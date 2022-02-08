@@ -22,16 +22,23 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
+
+  <p>
+    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              }, class:"nav-link text-danger" %>
+  </p>
 <% end %>
 
 <h2 class="text-secondary mt-5 mb-4">Add a comment:</h2>
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
   <p>
-    <%= form.label :commenter, class:"text-danger mb-2" %><br>
+    <%= form.label :commenter, class:"text-info mb-2" %><br>
     <%= form.text_field :commenter %>
   </p>
   <p>
-    <%= form.label :body, class:"text-danger mb-2"%><br>
+    <%= form.label :body, class:"text-info mb-2"%><br>
     <%= form.text_area :body %>
   </p>
   <p>
