@@ -1,3 +1,11 @@
 <div class="d-flex justify-content-center align-items-center text-danger">
   <h1>Welcome to tweets</h1>
 </div>
+
+<div>
+  <% if @user%>
+    Logeed in as : <%= @user.email%>
+
+    <%= button_to "Logout", logout_path, method: :delete%>
+  <%end%>
+</div>
