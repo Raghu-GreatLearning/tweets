@@ -1,4 +1,4 @@
-<h1>Sign In</h1>
+<h1 class="text-muted d-flex justify-content-center">Sign In</h1>
 
 <%= form_with url: sign_in_path do |form|%>
 
@@ -15,5 +15,5 @@
     <%= form.submit "Sign In", class:"btn btn-primary"%>
   </div>
 
-  <%= link_to "Forgot password", password_reset_path %>
+  <%= link_to "Forgot password", password_reset_path, class:"nav-link ps-0" %>
 <%end%>
